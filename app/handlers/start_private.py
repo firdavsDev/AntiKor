@@ -1,29 +1,26 @@
-from aiogram.types import ChatType, Message, CallbackQuery
-
+from aiogram.types import  ChatType, Message
 from misc import dp
 from models import Chats
+
+from buttons.language import language_buttons
 
 
 @dp.message_handler(chat_type=ChatType.PRIVATE, commands=['start'])
 async def send_welcome(message: Message):
     Chats.User(message.from_user.id)
     text = """
-/start - Botni qayta ishga tushirish
-/dev - Dasturchi haqida
+Assalom alaykum Telegram botimizga xush kelibsiz!
 """
     await message.reply(text,
-                        disable_web_page_preview=True, parse_mode="Html")
+                        disable_web_page_preview=True, parse_mode="Html",
+                        reply_markup=language_buttons)
 
-#dev
-@dp.message_handler(chat_type=ChatType.PRIVATE, commands=['dev'])
+#set_lang
+@dp.message_handler(chat_type=ChatType.PRIVATE, commands=['set_lang'])
 async def send_welcome(message: Message):
     Chats.User(message.from_user.id)
     text = """
-    Dasturchi: @Firdavs_dev* 
+    Tilni tanlang!
 """
-    await message.reply(text,
-                        disable_web_page_preview=True, parse_mode="Html")
+    await message.reply(text, parse_mode="Html", reply_markup=language_buttons)
 
-@dp.callback_query_handler(text_startswith=['delete'])
-async def _delete_message(query: CallbackQuery):
-    await query.message.delete()
