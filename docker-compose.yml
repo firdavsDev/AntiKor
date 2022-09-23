@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  aiogram: &aiogram
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      image: anti_kor_bot
+      container_name: aiogram
+      volumes:
+        - .:/app:cached
+      command: /start
+
