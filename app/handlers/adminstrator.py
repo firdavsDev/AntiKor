@@ -13,7 +13,7 @@ async def admin(message: types.Message):
         types.InlineKeyboardButton('Yuborish', callback_data='send-all'),
     )
     await message.reply_to_message.reply("Barchasi to'g'ri bo'lsa yuborish tugmasini bosing",
-                                         reply_markup=keyboard_markup)
+                                        reply_markup=keyboard_markup)
 
 
 @dp.callback_query_handler(text=['send-all'])
@@ -23,7 +23,3 @@ async def answer_call(query: types.CallbackQuery):
     await query.message.edit_text(str(send_wait))
 
 
-@dp.message_handler(is_owner=True, commands=['test'])
-async def _(message: types.Message):
-    Stat = Chats.Statistica()
-    await message.reply(f"Userlar: {Stat[0]}\nBarcha musiqalar: {Stat[1]}")

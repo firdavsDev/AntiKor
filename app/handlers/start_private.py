@@ -9,7 +9,7 @@ from buttons.language import language_buttons
 async def send_welcome(message: Message):
     Chats.User(message.from_user.id)
     text = """
-Assalom alaykum Telegram botimizga xush kelibsiz!
+Assalom allaykum Telegram botimizga xush kelibsiz!
 """
     await message.reply(text,
                         disable_web_page_preview=True, parse_mode="Html",
@@ -22,5 +22,7 @@ async def send_welcome(message: Message):
     text = """
     Tilni tanlang!
 """
-    await message.reply(text, parse_mode="Html", reply_markup=language_buttons)
+    await message.reply(text, 
+    disable_web_page_preview=True, parse_mode="Html",
+    reply_markup=language_buttons)
 

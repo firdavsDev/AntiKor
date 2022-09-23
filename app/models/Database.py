@@ -1,4 +1,5 @@
-from peewee import SqliteDatabase, Model, BigIntegerField, TextField, ForeignKeyField, CharField
+from peewee import (BigIntegerField, CharField, ForeignKeyField, Model,
+                    SqliteDatabase, TextField)
 
 db = SqliteDatabase('application_bot.db')
 
@@ -10,7 +11,7 @@ class Users(Model):
     )
     
     chat_id = BigIntegerField(primary_key=True)
-    lang = CharField(choices = LANGUAGE_CHOICES)
+    lang = CharField(choices = LANGUAGE_CHOICES, null = True)
     
     class Meta:
         database = db
@@ -23,7 +24,7 @@ class Application(Model):
         database = db
 
 class Answer(Model):
-    user_id = ForeignKeyField(Application, backref='answers')
+    application_id = ForeignKeyField(Application, backref='answers')
     msg = TextField()
 
     class Meta:
