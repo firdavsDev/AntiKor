@@ -1,6 +1,13 @@
 ## AntiKor
 
 
+This project has the following prerequisites
+
+- python 3.9.8
+- docker 19.03.12
+- docker-compose 1.25.0
+
+
 - Installing docker-compose
 
 ```
