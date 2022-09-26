@@ -17,7 +17,9 @@
 
 - Run manually
 * `python3 -m venv venv`
+* `source venv/bin/activate`
 * `pip install -r requirements.txt`
 * `cd app`
-* `python __main__.py`
+* `(venv) sh start.sh` #ubuntu
+* `(venv) python __main__.py` # other OS
 

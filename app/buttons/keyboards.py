@@ -1,8 +1,17 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.utils.callback_data import CallbackData
+from language import uz, ru
+import time
 
-SEND_MESSAGE = "✉️Xabar yuborish"
+#send application
+send_app_cb = CallbackData('application','app')
 
-send_message_keyboard = ReplyKeyboardMarkup(
-    [[KeyboardButton(SEND_MESSAGE)]], resize_keyboard=True, one_time_keyboard=True
-)
+def send_app_button(user):
+    send_app__inline_button = InlineKeyboardMarkup()
+    text = uz.uz['send_app'] if user.lang == 'uz' else ru.ru['send_app']
+    time.sleep(.05)  # 20 messages per second (Limit: 30 messages per second)
 
+    send_app__inline_button.row(
+        InlineKeyboardButton(text, callback_data = send_app_cb.new(app='send_app'))
+    )
+    return send_app__inline_button

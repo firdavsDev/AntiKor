@@ -16,6 +16,6 @@ regions = {
     },
     "ru": {
         'Xorazm_ru', 
-        'Samarqand_ru'
+        'Toshkent_ru'
         }
 }

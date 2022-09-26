@@ -38,7 +38,7 @@ async def send_message(user_id: int, msg) -> bool:
         return True
     return False
 
-
+#send all user msg
 async def broadcaster(msg) -> str:
     """
     Simple broadcaster

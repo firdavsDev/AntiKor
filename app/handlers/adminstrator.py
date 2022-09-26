@@ -4,7 +4,6 @@ from functions import send_to_alls
 from misc import dp
 from models import Chats
 
-
 @dp.message_handler(is_owner=True,text=['/send'],  is_reply=True)
 async def admin(message: types.Message):
     keyboard_markup = types.InlineKeyboardMarkup()
@@ -23,3 +22,8 @@ async def answer_call(query: types.CallbackQuery):
     await query.message.edit_text(str(send_wait))
 
 
+# statistika
+@dp.message_handler(is_owner=True, commands=['stat'])
+async def stat(message: types.Message):
+    Stat = Chats.Statistica()
+    await message.reply(f"Foydalanuvchilarning umumiy soni: {Stat[0]}\nUmumiy arizalar soni: {Stat[1]}\nUmumiy javoblar soni: {Stat[2]}\nJavob berilmagan anketalar soni: {Stat[3]}")
