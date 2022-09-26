@@ -14,5 +14,5 @@ def region_buttons(lang):
 
     if len(all_regions) % 2 != 0:
         buttons.append(two_buttons)
-    return ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True)
+    return ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True, selective=True)
 
