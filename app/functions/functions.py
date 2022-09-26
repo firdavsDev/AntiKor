@@ -1,6 +1,8 @@
-from models.Chats import User, Applications, Answers
-from language import uz, ru
+from language import ru, uz
+from models.Chats import Answers, Applications, User
 from models.Database import Application
+
+
 async def set_lang(user_id, lang=None) -> str:
     user = User(user_id)
     user.lang = lang

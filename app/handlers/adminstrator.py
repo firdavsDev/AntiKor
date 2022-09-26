@@ -17,7 +17,7 @@ async def admin(message: types.Message):
 
 @dp.callback_query_handler(text=['send-all'])
 async def answer_call(query: types.CallbackQuery):
-    await query.message.edit_text("Yuborilmoqda...")
+    await query.message.edit_text("Юборилмоқда...")
     send_wait = await send_to_alls.broadcaster(query.message.reply_to_message)
     await query.message.edit_text(str(send_wait))
 
@@ -26,4 +26,4 @@ async def answer_call(query: types.CallbackQuery):
 @dp.message_handler(is_owner=True, commands=['stat'])
 async def stat(message: types.Message):
     Stat = Chats.Statistica()
-    await message.reply(f"Foydalanuvchilarning umumiy soni: {Stat[0]}\nUmumiy arizalar soni: {Stat[1]}\nUmumiy javoblar soni: {Stat[2]}\nJavob berilmagan anketalar soni: {Stat[3]}")
+    await message.reply(f"Фойдаланувчиларнинг умумий сони: {Stat[0]}\nУмумий аризалар сони: {Stat[1]}\nУмумий жавоблар сони: {Stat[2]}\nЖавоб берилмаган анкеталар сони: {Stat[3]}")

@@ -16,6 +16,5 @@ async def set_region(message: types.Message, state: FSMContext):
     status, app = await functions.set_region(message.from_user.id, region=region)
     await message.answer(status)
 
-    # await Application.msg.set(app)
     await Application.next()
 

@@ -1,4 +1,4 @@
-TELEGRAM_TOKEN = "5015901974:AAHOZX4uM5TizdZXsH7K_KMduO4TZg2QCcA"
+TELEGRAM_TOKEN = "1874165228:AAF109BDdLpDh_0fcUCrzhQOMJVm-55KNY0"
 OWNER_ID = 937152038  # Admin IDsi
 BOT_ID = TELEGRAM_TOKEN.split(':')[0]
 # webhook settings
@@ -8,14 +8,37 @@ WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 # webserver settings
 WEBAPP_HOST = 'localhost'  # or ip
 WEBAPP_PORT = 3001
+
 #regions
 regions = {
     "uz": {
+        "Toshkent",
+        "Samarqand",
+        "Andijon",
+        "Buxoro",
+        "Farg'ona",
+        "Jizzax",
         "Xorazm",
-        "Toshkent"
+        "Namangan",
+        "Navoiy",
+        "Qashqadaryo",
+        "Qoraqalpog'iston Respublikasi",
+        "Sirdaryo",
+        "Surxondaryo",
     },
+    
     "ru": {
-        'Xorazm_ru', 
-        'Toshkent_ru'
+        "Ташкент",
+        "Самарканд",
+        "Бухара",
+        "Фергана",
+        "Джизак",
+        "Хорезм",
+        "Наманган",
+        "Навои",
+        "Кашкадарья",
+        "Республика Каракалпакстан",
+        "Сырдарья",
+        "Сурхандарья",
         }
 }

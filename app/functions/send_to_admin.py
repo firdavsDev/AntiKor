@@ -13,7 +13,7 @@ async def send_to_admin(msg: Message) -> bool:
     :return: Count of messages
     """
     try:
-        await msg.bot.send_message(chat_id=OWNER_ID, text="Yangi xabar mavjud! 👇")
+        await msg.bot.send_message(chat_id=OWNER_ID, text="Янги хабар мавжуд! 👇")
         await msg.forward(chat_id=OWNER_ID, protect_content=True)
     finally:
         log.info(f"{msg} messages successful sent")

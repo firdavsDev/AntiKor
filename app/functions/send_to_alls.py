@@ -56,4 +56,4 @@ async def broadcaster(msg) -> str:
     finally:
         log.info(f"{sends} messages successful sent.\n{error_sends} messages notsuccessful sent.")
 
-    return f"Yuborildi: {sends}\nYuborilmadi: {error_sends}"
+    return f"Юборилди: {sends}\nЮборилмади: {error_sends}"

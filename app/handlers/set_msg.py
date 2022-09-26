@@ -35,9 +35,4 @@ async def set_message(message: types.Message, state: FSMContext):
     # 1-variant
     await state.finish()
 
-    # 2-variant
-    # await state.reset_state()
-
-    # 3-variant. Ma`lumotlarni saqlab qolgan holda
-    # await state.reset_state(with_data=False)
 
