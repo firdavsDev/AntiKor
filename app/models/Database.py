@@ -15,8 +15,9 @@ class Application(Model):
     user_id = ForeignKeyField(Users, backref='applications')
     msg = TextField(null= True)
     region = CharField(null = True)
+    structure_type = CharField(null = True)
     answered = BooleanField(default=False)
-    file = CharField(max_length=500, null = True)
+    file_path = CharField(max_length=500, null = True)
 
     class Meta:
         database = db
