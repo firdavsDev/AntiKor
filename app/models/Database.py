@@ -16,6 +16,7 @@ class Application(Model):
     msg = TextField(null= True)
     region = CharField(null = True)
     answered = BooleanField(default=False)
+    file = CharField(max_length=500, null = True)
 
     class Meta:
         database = db

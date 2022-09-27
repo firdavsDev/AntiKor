@@ -17,9 +17,9 @@ def User(chat_id):
         return user
 
 
-def Applications(user_id):
+def Applications(user_id, msg, region, file_path=None):
     with contextlib.suppress(Exception):
-        return Application_.create(user_id=user_id)
+        return Application_.create(user_id=user_id, msg=msg,region=region, file=file_path)
 
 def Answers(app_id, msg=None):
     with contextlib.suppress(Exception):

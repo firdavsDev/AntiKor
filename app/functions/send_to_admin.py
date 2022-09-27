@@ -14,7 +14,7 @@ async def send_to_admin(msg: Message) -> bool:
     """
     try:
         await msg.bot.send_message(chat_id=OWNER_ID, text="Янги хабар мавжуд! 👇")
-        await msg.forward(chat_id=OWNER_ID, protect_content=True)
+        await msg.forward(chat_id=OWNER_ID)
     finally:
         log.info(f"{msg} messages successful sent")
     return True
