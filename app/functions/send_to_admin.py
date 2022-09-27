@@ -17,10 +17,8 @@ async def send_to_admin(msg: Message, data:dict, user) -> bool:
     try:
         region = data.get("region")
         structure = data.get("structure")
-        
-        text = "Янги хабар мавжуд! 👇\n"
-        text += "Қуйидаи маълумотлар қабул қилинди:\n\n"
 
+        text = "Янги хабар мавжуд! 👇\n" + "Қуйидаги маълумотлар қабул қилинди:\n\n"
         if region:
             text += f"Вилоят - {region}\n"
         else:
