@@ -13,7 +13,7 @@ log = logging.getLogger('send answer to user')
 @dp.message_handler(is_owner=True,  is_reply=True)
 async def send_admin_message(message: types.Message):
     try:
-        user_status_txt, admin_response_txt = await functions.set_answer(message.from_user.id, answer=message)
+        user_status_txt, admin_response_txt = await functions.set_answer(message.reply_to_message.forward_from.id, answer=message)
 
         #send user response
         await message.bot.send_message(message.reply_to_message.forward_from.id, user_status_txt)

@@ -23,9 +23,10 @@ async def set_answer(user_id, answer=None) -> str:
 async def set_application(data:dict, user)-> bool:
     try:
         region = data.get("region")
+        structure = data.get("structure")
         msg = data.get("msg")
         #save to databse
-        Applications(user.get_id(), msg=msg, region=region)
+        Applications(user.get_id(), msg=msg, region=region, structure = structure)
         return True
     except Exception:
         return False

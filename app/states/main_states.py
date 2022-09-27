@@ -5,4 +5,5 @@ from aiogram.dispatcher.filters.state import StatesGroup, State
 class Application(StatesGroup):
     # Foydalanuvchi buyerda 2 ta holatdan o'tishi kerak
     region = State() # Region
+    structure = State() # Region
     msg = State() # Message

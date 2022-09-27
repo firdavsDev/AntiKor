@@ -5,15 +5,16 @@ import asyncio
 
 
 #send application
-send_app_cb = CallbackData('application','app')
+start_app_cb = CallbackData('application','app')
 
 def send_app_button(user):
-    send_app__inline_button = InlineKeyboardMarkup()
-    asyncio.sleep(.05)  #  (Limit: 30 messages per second)
-    text = uz.uz['send_app'] if user.lang == 'uz' else ru.ru['send_app']
+    start_app_inline_button = InlineKeyboardMarkup()
+    region = uz.uz['send_app'] if user.lang == 'uz' else ru.ru['send_app']
+    structure = uz.uz['structure'] if user.lang == 'uz' else ru.ru['structure']
 
-    send_app__inline_button.row(
-        InlineKeyboardButton(text, callback_data = send_app_cb.new(app='send_app')),
+    start_app_inline_button.row(
+        InlineKeyboardButton(region, callback_data = start_app_cb.new(app='send_app')),
+        InlineKeyboardButton(structure, callback_data = start_app_cb.new(app='select_structure')),
     )
-    return send_app__inline_button
+    return start_app_inline_button
 

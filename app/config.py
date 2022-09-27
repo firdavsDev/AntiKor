@@ -1,7 +1,7 @@
 TELEGRAM_TOKEN = "5015901974:AAHOZX4uM5TizdZXsH7K_KMduO4TZg2QCcA" #producton token
 # TELEGRAM_TOKEN = "1874165228:AAF109BDdLpDh_0fcUCrzhQOMJVm-55KNY0" #test token
-OWNER_ID = 5119886926  # Admin IDsi
-# OWNER_ID = 937152038  # Dev IDsi
+# OWNER_ID = 5119886926  # Admin IDsi
+OWNER_ID = 2065744415  # Dev IDsi
 BOT_ID = TELEGRAM_TOKEN.split(':')[0]
 # webhook settings
 WEBHOOK_HOST = 'https://your.domain'
@@ -13,6 +13,7 @@ WEBAPP_PORT = 3001
 
 #regions
 regions = {
+
     "uz": {
         "Тошкент",
         "Тошкент ш",

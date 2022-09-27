@@ -8,12 +8,12 @@ from models.Chats import User
 from states.main_states import Application
 
 
-@dp.message_handler(state=Application.region)
-async def set_region(message: types.Message, state: FSMContext):
-    region = message.text
-
+@dp.message_handler(state=Application.structure)
+async def set_structure_type(message: types.Message, state: FSMContext):
+    structure = message.text
+    
     await state.update_data(
-        {"region": region}
+        {"structure": structure}
     )
 
     user = User(message.from_user.id)

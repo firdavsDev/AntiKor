@@ -16,16 +16,15 @@ async def set_message(message: types.Message, state: FSMContext):
     await state.update_data(
         {"msg": msg}
     )
-    user = User(message.from_user.id)
-
+    user = User(msg.from_user.id)
     # Ma`lumotlarni qayta o'qiymiz
     data = await state.get_data()
     saved = await functions.set_application(data=data, user = user)
     if saved:
         #send msg to admin
-        await send_to_admin(msg=message)
+        await send_to_admin(msg=msg, data=data, user=user)
     
-    status = uz.uz['mes_sent'] if user.lang == 'uz' else ru.ru['mes_sent']
+    status = uz.uz['msg_sent'] if user.lang == 'uz' else ru.ru['msg_sent']
     await message.answer(status)
 
     # State dan chiqaramiz
