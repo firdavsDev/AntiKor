@@ -19,11 +19,7 @@ async def send_to_admin(msg: Message, data:dict, user) -> bool:
         structure = data.get("structure")
 
         text = "Янги хабар мавжуд! 👇\n" + "Қуйидаги маълумотлар қабул қилинди:\n\n"
-        if region:
-            text += f"Вилоят - {region}\n"
-        else:
-            text += f"Тузилма - {structure}\n"
-
+        text += f"Вилоят - {region}\n" if region else f"Тузилма - {structure}\n"
         await msg.bot.send_message(chat_id=OWNER_ID, text=text)
         await msg.forward(chat_id=OWNER_ID)
     finally:
