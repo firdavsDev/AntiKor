@@ -1,7 +1,7 @@
-TELEGRAM_TOKEN = "5015901974:AAHOZX4uM5TizdZXsH7K_KMduO4TZg2QCcA" #producton token
-# TELEGRAM_TOKEN = "1874165228:AAF109BDdLpDh_0fcUCrzhQOMJVm-55KNY0" #test token
-OWNER_ID = 651379119  # Admin IDsi
-# OWNER_ID = 2065744415  # Dev IDsi
+TELEGRAM_TOKEN = "" #producton token
+# TELEGRAM_TOKEN = "" #test token
+OWNER_ID = 000000  # Admin IDsi
+# OWNER_ID = 000000  # Dev IDsi
 BOT_ID = TELEGRAM_TOKEN.split(':')[0]
 # webhook settings
 WEBHOOK_HOST = 'https://your.domain'
